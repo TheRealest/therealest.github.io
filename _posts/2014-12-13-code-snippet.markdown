@@ -4,11 +4,11 @@ title:  "Post With A Code Snippet"
 date:   2014-12-13
 ---
 
-<p class="intro"><span class="dropcap">Y</span>ou'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes! To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
+<p class="intro"><span class="dropcap">Y</span>ou'll find this post in your <code>_posts</code> directory - edit this post and re-build (or run with the <code>-w</code> switch) to see your changes! To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
 
-Jekyll also offers powerful support for code snippets:
+Jekyll also offers `powerful` support for code snippets:
 
-{% highlight js %}
+```js
 if (flags.length === 0 && args.length === 0) {
   var lines = [this.line('resources','header')];
   var rs = this.resources.all();
@@ -24,7 +24,11 @@ if (flags.length === 0 && args.length === 0) {
 } else {
   return this.runner.runCommand('resource --help');
 }
-{% endhighlight %}
+```
+
+```js
+cool.thin.call(this,args);
+```
 
 Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
 

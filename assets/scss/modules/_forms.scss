@@ -8,6 +8,7 @@ label {
 }
 input[type=text],input[type=email],input[type=phone],input[type=password],input[type=number],input[type=search], textarea {
 	background: darken(white, 10%);
+	color: $primary-color;
 	padding:5px;
 	outline:none;
 	border: none;
