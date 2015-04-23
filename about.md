@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About Long Haul
+permalink: about/
 ---
 
 <div class="post">

@@ -1,27 +1,36 @@
-title: Long Haul
-description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+title: Real Iterations
+description: The technical blog of front end developer Réal Provencher
 
-url: http://brianmaierjr.github.com/long-haul
+url: http://therealest.github.io
 baseurl: ""
-paginate_path: "blog/page:num/"
-permalink: blog/:title/
+paginate_path: "page:num/"
+permalink: :title/
 
 markdown: redcarpet
 highlighter: pygments
 paginate: 5
 
 navigation:
- - title: Home
-   url: /index.html
- - title: About
-   url: /about
- - title: Contact
-   url: /contact
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
 
 social:
-   github: brianmaierjr
-   twitter: brianmaierjr
-   facebook: brianmaierjr
-   email: brimaidesigns@gmail.com
+  github: therealest
+  # twitter: brianmaierjr
+  # facebook: brianmaierjr
+  email: real@rrprovencher.com
 
-google_analytics: "UA-58263416-1"
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+
+# google_analytics: "UA-58263416-1"
