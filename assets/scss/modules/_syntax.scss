@@ -16,9 +16,9 @@ $comment:     #6D7091;
   white-space: pre;
   overflow: auto;
   word-wrap: normal; /* horizontal scrolling */
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  -moz-border-radius: $br;
+  -webkit-border-radius: $br;
+  border-radius: $br;
   padding: 0 20px;
   background: $background;
   color: $standard;
