@@ -1,8 +1,16 @@
 /***************
-  Darkly Pygments Theme
-  (c) 2014 Sourcey
-  http://sourcey.com
+  Sweet Sixteen Theme
+  (c) 2015 Réal R. Provencher
+  http://rrprovencher.com
 ***************/
+
+$background:  #393442;
+$standard:    #C1C2C3;
+$keyword:     #B472CF;
+$operator:    #9B90BB;
+$literal:     #F925E6;
+$comment:     #6D7091;
+
 
 .highlight {
   white-space: pre; 
@@ -11,36 +19,40 @@
   -moz-border-radius: 3px; 
   -webkit-border-radius: 3px; 
   border-radius: 3px;
-  padding: 20px; 
-  background: #343642;
-  color: #C1C2C3;
+  padding: 0 20px;
+  background: $background;
+  color: $standard;
 
-  .hll { background-color: #ffc; }
-  .gd { color: #2e3436; background-color: #0e1416; }
-  .gr { color: #eeeeec; background-color: #c00; }
-  .gi { color: #babdb6; background-color: #1f2b2d; }
-  .go { color: #2c3032; background-color: #2c3032; }
-  .kt { color: #e3e7df; }
-  .ni { color: #888a85; }
-  .c,.cm,.c1,.cs { color: #8D9684; }
+  .c,.cm,.c1,.cs { color: $comment; }
   .err,.g,.l,.n,.x,.p,.ge,
   .gp,.gs,.gt,.ld,.s,.nc,.nd,
-  .ne,.nl,.nn,.nx,.py,.ow,.w,.sb,
-  .sc,.sd,.s2,.se,.sh,.si,.sx,.sr,
-  .s1,.ss,.bp { color: #C1C2C3; }
+  .ne,.nl,.nn,.nx,.py,.ow,.w,.bp { color: $standard; }
   .k,.kc,.kd,.kn,.kp,.kr,
-  .nt { color: #729fcf; }
-  .cp,.gh,.gu,.na,.nf { color: #E9A94B ; }
-  .m,.nb,.no,.mf,.mh,.mi,.mo,
-  .il { color: #8ae234; }
-  .o { color: #989DAA; }
-  .nv,.vc,.vg,.vi { color: #fff; }
+  .nt,.nb,.no { color: $keyword; }
+  .m,.mf,.mh,.mi,.mo,
+  .il,.sb,.sc,.sd,.s2,.se,.sh,
+  .si,.sx,.sr,.s1,.ss, { color: $literal; }
+  .o { color: $operator; }
+
+  //// the remains of the previous pygments stylesheet
+  // .hll { background-color: #ffc; }
+  // .nv,.vc,.vg,.vi { color: #fff; }
+  // .cp,.gh,.gu,.na,.nf { color: #E9A94B ; }
+  // .gd { color: #2e3436; background-color: #0e1416; }
+  // .gr { color: #eeeeec; background-color: #c00; }
+  // .gi { color: #babdb6; background-color: #1f2b2d; }
+  // .go { color: #2c3032; background-color: #2c3032; }
+  // .kt { color: #e3e7df; }
+  // .ni { color: #888a85; }
 }
 
 // background for inline code blocks
-p code {
+p code, blockquote code {
   background: $primary-color;
   padding: 0.1em 0.2em;
   border-radius: $br;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: inset 0 1px 10px rgba(0,0,0,0.3),
+              0 1px 0 rgba(245, 137, 185, 0.6),
+              0 -1px 0 rgba(150, 23, 91, 0.5);
+  color: darken($text-color,5%);
 }
