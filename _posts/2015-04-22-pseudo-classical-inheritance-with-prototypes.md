@@ -1,6 +1,6 @@
 ---
 title: Pseudo-classical inheritance with prototypes
-date: 2015-04-15
+date: 2015-04-22
 ---
 <p class="intro"><span class="dropcap">P</span>rototypal inheritance is a major sticking point for many when learning Javascript. Compared to a classical inheritance system like most languages have, prototypes are unintuitive and can be unwieldly. Trying to use a constructor function as the prototype for another constructor in an attempt to imitate a subclassing pattern can often leave a new developer exasperated, copying and pasting code from StackOverflow just to make it work.</p>
 
