@@ -31,6 +31,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  -
+    scope:
+      path: ""
+      type: "drafts"
+    values:
+      layout: "post"
 
 
 # google_analytics: "UA-58263416-1"
