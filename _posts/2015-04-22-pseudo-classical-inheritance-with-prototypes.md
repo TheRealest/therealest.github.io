@@ -4,6 +4,8 @@ date: 2015-04-22
 ---
 <p class="intro"><span class="dropcap">P</span>rototypal inheritance is a major sticking point for many when learning Javascript. Compared to a classical inheritance system like most languages have, prototypes are unintuitive and can be unwieldly. Trying to use a constructor function as the prototype for another constructor in an attempt to imitate a subclassing pattern can often leave a new developer exasperated, copying and pasting code from StackOverflow just to make it work.</p>
 
+<p class="note">Note: This is the method I learned for setting up inheritance chains through prototypes, and while it's a widely taught pattern, in writing this post I came across another pattern that is now in wide use that better deals with some specific cases that the pattern detailed her has trouble with. This is a learning experience for me as well as you! Keep in mind that the examples given below are <em>not</em> part of those edge cases and will work fine as written, but just know that you may see another pattern in common use too.</p>
+
 ### Simple object literal prototypes
 
 It's not difficult to see how property lookups work with the prototype chain when you're using a simple object as the prototype for a constructor – something like this:
