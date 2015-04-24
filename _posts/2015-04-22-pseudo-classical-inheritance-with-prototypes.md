@@ -98,7 +98,7 @@ If this is still confusing, think of it this way. The constructor `Ticket` is li
 
 `MagicTicket` is similarly a factory for creating instances like `myMagicTicket`. But we want `myMagicTicket` to behave like `myTicket` for the most part, just with the added properties described in the `MagicTicket` definition. Another way of putting it is that we want a `Ticket` instance like `myTicket` to act as a *prototype* for anything created by the `MagicTicket` factory.
 
-<blockquote>Now it becomes clear why we needed to use <code>new</code> when setting the prototype for <code>MagicTicket</code>. How can a prototypical magic ticket be a ticket factory? But it does make sense for an actual ticket to serve as the prototype for a magic ticket.</blockquote>
+<blockquote>Now it becomes clear why we needed to use <code>new</code> when setting the prototype for <code>MagicTicket</code>. Does it make sense for a <strong>ticket factory</strong> to serve as the prototype for a <strong>magic ticket</strong>? It <em>does</em> make sense for an actual <strong>ticket</strong> to serve as the prototype for a <strong>magic ticket</strong> however.</blockquote>
 
 This is what our code looks like now:
 
@@ -233,7 +233,7 @@ myMagicTicket
 
 Now that `MagicTicket` is disconnected from the prototype chain, it doesn't have access to `wrap`!
 
-<blockquote>Even though we used the <code>Ticket</code> constructor to add properties to <code>MagicTicket</code> instances, we still need to set <code>MagicTicket.prototype</code> if we expect to inherit properties or methods from the prototype of <code>Ticket</code>.</blockquote>
+<blockquote>Even though we used the <code>Ticket</code> constructor to add properties to <code>MagicTicket</code> instances, we still need to set <code>MagicTicket.prototype</code> if we expect to inherit properties or methods from the <strong>prototype</strong> of <code>Ticket</code>.</blockquote>
 
 Prototypal inheritance is far from intuitive, but I think this demonstrates why you should be using instances instead of constructors as prototypes, why you might want to call one constructor from within another, and why that doesn't preclude you from using the prototype as well.
 
