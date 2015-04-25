@@ -25,12 +25,12 @@ $comment:     #6D7091;
 
   .c,.cm,.c1,.cs { color: $comment; }
   .err,.g,.l,.n,.x,.p,.ge,
-  .gp,.gs,.gt,.ld,.s,.nc,.nd,
+  .ld,.s,.nc,.nd,
   .ne,.nl,.nn,.nx,.py,.ow,.w,.bp { color: $standard; }
   .k,.kc,.kd,.kn,.kp,.kr,
   .nt,.nb,.no { color: $keyword; }
   .m,.mf,.mh,.mi,.mo,
-  .il,.sb,.sc,.sd,.s2,.se,.sh,
+  .gp,.gs,.gt,.il,.sb,.sc,.sd,.s2,.se,.sh,
   .si,.sx,.sr,.s1,.ss, { color: $literal; }
   .o { color: $operator; }
 
