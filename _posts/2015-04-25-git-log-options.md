@@ -141,7 +141,7 @@ The `--decorate` option adds branch names to the log output like so:
 
 On the first line of the output you can see `(HEAD, origin/master, origin/HEAD, master)` between the commit SHA and the message. This shows that both my local `HEAD` and `master` branch, as well as the corresponding remote branches they track, all point to that commit. This is really nice for checking whether you've pushed your recent commits to a remote, because if haven't you would see `origin/HEAD` and `origin/master` further down in the history.
 
-<blockquote>Keep in mind that all of the commands we've used so far only show commits leading up to <code>HEAD</code>. Put another way, any commits which did not contribute to the current working tree are not going to appear in <code>git log</code>.</blockquote>
+>Keep in mind that all of the commands we've used so far only show commits leading up to `HEAD`. Put another way, any commits which did not contribute to the current working tree are not going to appear in `git log`.
 
 ### The <code>--branches</code> option
 
@@ -185,7 +185,7 @@ Besides getting a bird's eye view of your project, the `--branches` flag can be 
 
 ### Setting up aliases for <code>git log</code>
 
-Between `--graph`, `--decorate`, `--oneline`, and `--branches`, you should be able to display and understand most of what you'll need to know about your commit history. Typing these flags and remembering which is which can be a pain though, so I would suggest setting up `git` aliases for the modes you use most often.
+Between `--oneline`, `--graph`, `--decorate`, and `--branches`, you should be able to display and understand most of what you'll need to know about your commit history. Typing these flags and remembering which is which can be a pain though, so I would suggest setting up `git` aliases for the modes you use most often.
 
 I prefer to have two aliases for logging, one with `--branches` and one without. Both aliases have the other three flags we've discussed. With this setup you can easily see a very dense history with SHAs, commit messages, branch names, and the graphical branching diagram, and you can decide whether you want to see just commits for the current branch or for all of them.
 
@@ -193,15 +193,15 @@ Here's what the entries look like in my `~/.gitconfig` file:
 
 ```console
 [alias]
-  l = log --graph --decorate --oneline
-  ll = log --graph --decorate --oneline --branches
+  l = log --oneline --graph --decorate
+  ll = log --oneline --graph --decorate --branches
 ```
 
 Now you can do `git l` to display only commits for the current branch, and `git ll` for all commits. The `git` command will add any additional arguments or flags to the end of your aliases when you use them, so `git ll` is equivalent to `git l --branches`.
 
 ### Filtering commits
 
-There are a few other options for filtering commits or limiting the number of commits displayed that you might find useful. You can use ranges to only display commits that are in *one* branch but not *another* by appending `another..one` to the end of your log command:
+There are a few other options for filtering commits or limiting the number of commits displayed that you might find useful. You can use ranges to only display commits that are in *one* branch but not *another* by appending `another..one` to the end of your command:
 
 ```console
 > git l master..trip-events
@@ -213,7 +213,7 @@ There are a few other options for filtering commits or limiting the number of co
 
 If you compare this output to the output above you'll see this is just the four commits in the `trip-events` branch ahead of `master`. You can also use commit SHAs or tags instead of branches in the range.
 
-You can limit the number of commits rendered with the `-n` flag. There are two ways to use `-n`: either with a number following the flag, or by replacing the `n` with a number.
+You can limit the number of commits rendered with the `-n` flag. There are two ways to use `-n`: either with a number following the flag, or by replacing the `n` with a number (they do the same thing).
 
 ```console
 > git l -n 5
@@ -252,7 +252,7 @@ You can omit the `--` if there wouldn't be any confusion between your file path 
 
 ### Getting more detail out of your log
 
-The oneline mode is nice for looking at a lot of commits at once, but you may want to include a little more detail in the history sometimes. There are two options which add information for each commit: `--name-status` and `-p`. The first lists which files where changed in each commit:
+The oneline mode is nice for looking at a lot of commits at once, but you may want to include a little more detail in the history sometimes. There are two options which add information for each commit: `--name-status` and `-p`. The first lists which files were changed in each commit (the *status* of the affected *filenames*):
 
 ```console
 > git l --name-status
@@ -272,7 +272,7 @@ The oneline mode is nice for looking at a lot of commits at once, but you may wa
 | | M   public/index.html
 ```
 
-The second gives a full diff for each commit:
+The second gives a full diff for each commit (also called a *patch*):
 
 ```console
 > git l -p
@@ -308,16 +308,16 @@ These options can be a little overwhelming but when combined with the filtering 
 
 ### `git log` cheatsheet
 
-Here are all the options we've gone together for your reference.
+Here are all the options we've gone over together for your reference.
 
-- `--oneline` (condenses commit info to a single line with shortened SHA and message)
+- `--oneline` (condenses commit info down to a single line with message and shortened SHA)
 - `--graph` (adds graphical representation of branching and merging)
 - `--decorate` (adds branch names like `HEAD`, `master`, `origin/master`)
-- `--branches` (includes commits from all branches, not just the ones in the history of the HEAD)
-- `branchone...branchtwo` (only display commits from `branchtwo` which are not in `branchone`)
-- `--` filepaths (only display commits which edit the given file)
+- `--branches` (includes commits from all branches, not just the ones in the history of your `HEAD`)
+- `ref_one..ref_two` (only displays commits from `ref_two` which are not in `ref_one`, where the `ref`s can be branch names, commit SHAs, or tags)
+- `-- <filepath>` (only display commits which edit the given file)
 - `-n <num>` and `-<num>` (only display the first `<num>` commits)
-- `--name-status` (list files affectedby each commit)
+- `--name-status` (list files affected by each commit)
 - `-p` (include the diff for each commit)
 
 And my `git log` aliases:
