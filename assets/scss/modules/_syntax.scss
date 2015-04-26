@@ -48,7 +48,8 @@ $comment:     #6D7091;
 
 // background for inline code blocks
 p, blockquote,
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+ol, ul {
   code {
     background: $primary-color;
     padding: 0.1em 0.2em;
