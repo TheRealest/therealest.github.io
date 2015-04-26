@@ -225,6 +225,11 @@ POST STYLING
 		line-height: 1.8;
 		position: relative;
 
+		p {
+			margin: 0;
+			width: 100%;
+		}
+
 		&:before {
 			content: "";
 			position: absolute;
