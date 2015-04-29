@@ -1,0 +1,16 @@
+{
+  "name": "therealest.github.io",
+  "version": "0.0.1",
+  "description": "The technical blog of front end developer Réal Provencher",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TheRealest/therealest.github.io"
+  },
+  "scripts": {
+    "jk": "jekyll serve",
+    "jkd": "jekyll serve --drafts",
+    "sass": "compass watch",
+    "dev": "npm run jk && npm run sass",
+    "ddev": "npm run jkd && npm run sass"
+  }
+}
