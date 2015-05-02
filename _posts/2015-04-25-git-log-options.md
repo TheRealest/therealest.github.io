@@ -197,7 +197,9 @@ Here's what the entries look like in my `~/.gitconfig` file:
   ll = log --oneline --graph --decorate --branches
 ```
 
-Now you can do `git l` to display only commits for the current branch, and `git ll` for all commits. The `git` command will add any additional arguments or flags to the end of your aliases when you use them, so `git ll` is equivalent to `git l --branches`.
+Note that those are lowercase letter `L`s, not number `1`s.
+
+Now you can do `git l` to display only commits for the current branch, and `git ll` for all commits. The `git` command will add any additional arguments or flags to the end of your aliases when you use them, so `git ll` is equivalent to `git l --branches`. From here on out I will be using the `git l` alias in examples to shorten the command line input and make the new options introduced easier to recognize. If you want to use the example commands without defining the aliases just replace `git l` with `git log --oneline --graph --decorate` as defined above.
 
 ### Filtering commits
 
