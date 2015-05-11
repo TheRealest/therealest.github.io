@@ -40,5 +40,5 @@ defaults:
     values:
       layout: "post"
 
-
-# google_analytics: "UA-58263416-1"
+disqus_shortname: "therealestio"
+google_analytics: "UA-62858600-1"
