@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="code">
+  <div class="code-sidebar">
+    <ul>
+    {% for codeCategory in site.data.codeTypes %}
+    <li class="code-type">{{ codeCategory.title }}
+      <ul>
+        {% for code in site.code %}
+        {% assign dirs = code.relative_path | split: '/' %}{% assign type = dirs[1] %}
+        {% if type == codeCategory.type %}
+        <li class="code-link">
+          <a href="{{ site.baseurl }}{{ code.url }}">{{ code.title }}</a>
+        </li>
+        {% endif %}{% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="code-content">
+      <h1 class="code-title">{{ page.title }}</h1>
+
+    {{ content }}
+  </div>
+</div>
