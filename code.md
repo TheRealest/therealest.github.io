@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 layout: default
 title: Code Examples
 permalink: code/
@@ -24,3 +25,9 @@ permalink: code/
   		<li><a href="http://typecast.com/blog/a-more-modern-scale-for-web-typography">A Better Type Scale</a></li>
   	</ul>
 </div>
+=======
+layout: code
+title: Code Portfolio
+permalink: code/
+---
+>>>>>>> fc4459002c7a2bf1f5feafc98b4c7cd1d6405a38
