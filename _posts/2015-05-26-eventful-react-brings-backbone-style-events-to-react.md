@@ -48,9 +48,12 @@ This is really more in line with React's way of doing things than letting any co
 
 ### The interface
 
-To start using `eventful-react` you just need to add a script tag to your markup and switch out your calls to `React.createClass` with `Eventful.createClass`. `Eventful` will add your typical event emitter style methods (currently `emit` and `on`) and wrap some lifecycle methods to take care of the event system management mentioned above, and then delegate to React to generate the actual component object.
+To start using `eventful-react` first run `npm install --save eventful-react`, then include `var Eventful = require('eventful-react')` in your component files and switch out your calls to `React.createClass` with `Eventful.createClass`. `Eventful` will add your typical event emitter style methods (currently `emit` and `on`) and wrap some lifecycle methods to take care of the event system management mentioned above, and then delegate to React to generate the actual component object.
 
 ```js
+var React = require('react');
+var Eventful = require('eventful-react');
+
 var Parent = Eventful.createClass({
   componentDidMount: function() {
     this.on('click', this.clickHandler);
@@ -75,6 +78,8 @@ var Child = Eventful.createClass({
 ```
 
 This is something of a contrived example, but you can see how any intermediate components would be free from passing on event handlers from parent to child. `Eventful` takes care of that external event system Facebook suggests and exposes a simple, familiar interface for registering callbacks, triggering events, and sending arguments up the component hierarchy.
+
+Keep in mind you still need to include the line `var React = require('react')` in every component file because React is used for the JSX in all of your `render` functions.
 
 ### Where this project is going
 
